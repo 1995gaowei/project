@@ -23,8 +23,8 @@
                 <div class="title">Skills</div>
             </Col>
             <Col :span="8" offset="2">
-                <div  v-for="item in user.skill" :key="item">
-                    <Tag type="dot" color="blue">{{ item }}</Tag>
+                <div>
+                    <Tag type="dot" color="green"  v-for="item in user.skill" :key="item">{{ item }}</Tag>
                 </div>
             </Col>
         </Row>
@@ -34,22 +34,15 @@
                 <div class="title">Preferences</div>
             </Col>
             <Col :span="8" offset="2">
-                <div  v-for="item in user.preferences" :key="item">
-                    <Tag type="dot" color="blue">{{ item }}</Tag>
+                <div>
+                    <Tag type="dot" color="blue"  v-for="item in user.preferences" :key="item">{{ item }}</Tag>
+                </div>
+                <div style="margin-top: 20px;">
+                    <Tag type="dot" color="blue"  v-for="item in user.otherPref" :key="item">{{ item }}</Tag>
                 </div>
             </Col>
         </Row>
         
-        <Row  type="flex" align="top" class="item">
-            <Col :span="6" offset="4">
-                <div class="title">OtherPref</div>
-            </Col>
-            <Col :span="8" offset="2">
-                <div  v-for="item in user.otherPref" :key="item">
-                    <Tag type="dot" color="blue">{{ item }}</Tag>
-                </div>
-            </Col>
-        </Row>
     </div>
 </template>
 
@@ -76,12 +69,12 @@ export default {
 
 .title {
     text-align: right;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .value {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 </style>

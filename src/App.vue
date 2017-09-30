@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <header-nav></header-nav>
-    <router-view></router-view>
+    <div class="main-view">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -22,5 +24,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 80px;
+}
+
+.main-view {
+  padding: 0 5%;
+}
+
+p {
+  word-wrap: break-word;
 }
 </style>
