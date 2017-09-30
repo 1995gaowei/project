@@ -12,7 +12,7 @@
             <Button type="success" shape="circle" style="float: right;" v-else @click.stop="toggleFollow(job)">
               Following
             </Button>
-            <p class="name">{{ job.name }}</p>
+            <a class="name" :href="job.link" target="_blank">{{ job.name }}</a>
             <p class="company">{{ job.company }}</p>
             <p class="address">{{ job.city }}, {{ job.state }}</p>
             <p class="description">{{ job.description }}</p>
@@ -21,9 +21,13 @@
       </div>
       </Col>
       <Col span="10">
-      <Affix :offset-top="80">
-        <div id="chart" style="height: 550px;"></div>
-      </Affix>
+        <Affix :offset-top="80">
+            <div id="chart" style="height: 550px;"></div>
+            <div class="followCity">
+                <Button type="ghost" shape="circle" icon="star" v-if="followCity" @click="followCity = false">{{ activeCity }}</Button>
+                <Button type="success" shape="circle" icon="star" v-else @click="followCity = true">{{ activeCity }}</Button>
+            </div>
+        </Affix>
       </Col>
     </Row>
   </div>
@@ -36,7 +40,9 @@
     name: 'jobs',
     data: function () {
       return {
-        jobs: []
+        jobs: [],
+        activeCity: 'NewYork',
+        followCity: true
       }
     },
     methods: {
@@ -46,6 +52,8 @@
       changeCity(job) {
         // this.chart = echarts.getInstanceByDom(document.getElementById('chart'));
         this.retrieveData(job.city);
+        this.activeCity = job.city;
+        this.followCity = true;
       },
       retrieveData(city) {
         $.get('/static/data/' + city + '.json').done((res) => {
@@ -116,7 +124,8 @@
           }
         },
         legend: {
-          data: ['New York', '']
+          data: ['New York', ''],
+          right: 20
         },
         grid: {
           left: '3%',
@@ -170,7 +179,6 @@
   .job {
     text-align: left;
     margin-bottom: 10px;
-    cursor: pointer;
   }
 
   .job .name {
@@ -191,5 +199,11 @@
   .job .description {
     font-size: 15px;
     margin-top: 5px
+  }
+
+  .followCity {
+    position: absolute;
+    top: 0px;
+    left: 20px;
   }
 </style>

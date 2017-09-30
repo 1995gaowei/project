@@ -44,7 +44,7 @@
             </Col>
         </Row> -->
 
-        <h1 style="text-align: center; margin-bottom: 30px;">{{ user.name }}</h1>
+        <h1 style="text-align: center; margin-bottom: 30px; color: #2d8cf0;">{{ user.name }}</h1>
 
         <div class="head">
             <div class="line"></div>
