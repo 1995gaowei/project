@@ -24,11 +24,11 @@ API Example
 
 User:
 
-    {"preferences":["crime","traffic"],"name":"Reggie Yang","otherPref":["climate","education","cost_of_living","cuisine","pollution","female-male-ratio","health-care"],"skill":["Scala","Java"]}
+    {"preferences":["crime","traffic","pollution","climate"],"name":"Reggie Yang","otherPref":["education","cost_of_living","cuisine","female-male-ratio","health-care"],"address":"New York","skill":["Scala","Java"]}
     
 第一个界面就用这个：
 
-具体字段：用户姓名，技能，主要看重点，次要看重点。展示：用户姓名：xxx，技能：xxx，主要看重点：分行展示，次要看重点：剩下几个，分行展示
+具体字段：用户姓名，技能，地址，主要看重点，次要看重点。展示：用户姓名：xxx，技能：xxx，主要看重点：分行展示，次要看重点：剩下几个，分行展示
 
 
 City:
