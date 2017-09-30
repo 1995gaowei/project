@@ -42,4 +42,4 @@ Job:
 
     {"name":"Java Engineer","company":"eBay","city":"San Jose","state":"CA","link":"baidu.com","description":"HAHA","skill":"Java, Python"}
     
-工作的名字，公司，城市，州，描述（不用展示在界面上），技能。链接就作为公司名字的href，可以点进去
+工作的名字，公司，城市，州，描述，技能。链接就作为公司名字的href，可以点进去
