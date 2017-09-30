@@ -139,7 +139,7 @@
         },
         yAxis: {
           type: 'category',
-          data: ["education", "female ratio", "traffic", "crime", "cost of living", "climate", "pollution", "health care", "cuisine"]
+          data: ["Education", "Female Ratio", "Traffic", "Crime", "Cost of Living", "Climate", "Pollution", "Health Care", "Cuisine"]
         },
         series: [
           {
