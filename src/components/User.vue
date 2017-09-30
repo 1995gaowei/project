@@ -52,10 +52,15 @@ export default {
     name: 'user',
     data: function() {	
         return {
-            user: {"preferences":["crime","traffic","pollution","climate"],"name":"Reggie Yang","otherPref":["education","cost of living","cuisine","female-male-ratio","health-care"],"address":"New York","skill":["Scala","Java"]}
+            user: {}
         }
     },
-    methods: {}
+    methods: {},
+    created() {
+        $.get('/static/data/user.json').done((res) => {
+            this.user = res;
+        })
+    }
 }
 </script>
 
