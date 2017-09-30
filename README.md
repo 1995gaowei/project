@@ -36,3 +36,10 @@ City:
     {"name":"Dallas","state":"TX","cuisine":4.19,"healthCare":66.13,"pollution":44.8,"climate":82.78,"costOfLiving":67.44,"crime":44.76,"traffic":182.29,"femaleRatio":52.0,"education":55.0}
     
 每个城市的名字，所在州。后面的字段就是各种指标，全都用于绘图。图上是对比型的柱状图。
+
+
+Job:
+
+    {"name":"Java Engineer","company":"eBay","city":"San Jose","state":"CA","link":"baidu.com","description":"HAHA","skill":"Java, Python"}
+    
+工作的名字，公司，城市，州，描述（不用展示在界面上），技能。链接就作为公司名字的href，可以点进去
