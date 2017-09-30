@@ -1,7 +1,7 @@
 <template>
     <div class="user">
         <Row  type="flex" align="top" class="item">
-            <Col :span="6" offset="4">
+            <Col :span="6" offset="3">
                 <div class="title">Name</div>
             </Col>
             <Col :span="8" offset="2">
@@ -10,7 +10,7 @@
         </Row>
 
         <Row  type="flex" align="top" class="item">
-            <Col :span="6" offset="4">
+            <Col :span="6" offset="3">
                 <div class="title">Address</div>
             </Col>
             <Col :span="8" offset="2">
@@ -19,18 +19,19 @@
         </Row>
 
         <Row  type="flex" align="top" class="item">
-            <Col :span="6" offset="4">
+            <Col :span="6" offset="3">
                 <div class="title">Skills</div>
             </Col>
             <Col :span="8" offset="2">
                 <div>
                     <Tag type="dot" color="green"  v-for="item in user.skill" :key="item">{{ item }}</Tag>
+                    <Button type="dashed" icon="plus-round"></Button>
                 </div>
             </Col>
         </Row>
         
         <Row  type="flex" align="top" class="item">
-            <Col :span="6" offset="4">
+            <Col :span="6" offset="3">
                 <div class="title">Preferences</div>
             </Col>
             <Col :span="8" offset="2">
@@ -51,7 +52,7 @@ export default {
     name: 'user',
     data: function() {	
         return {
-            user: {"preferences":["crime","traffic","pollution","climate"],"name":"Reggie Yang","otherPref":["education","cost_of_living","cuisine","female-male-ratio","health-care"],"address":"New York","skill":["Scala","Java"]}
+            user: {"preferences":["crime","traffic","pollution","climate"],"name":"Reggie Yang","otherPref":["education","cost of living","cuisine","female-male-ratio","health-care"],"address":"New York","skill":["Scala","Java"]}
         }
     },
     methods: {}
