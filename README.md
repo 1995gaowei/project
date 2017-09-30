@@ -22,5 +22,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 API Example
 
-#User:
-##{"preferences":["crime","traffic"],"name":"Reggie Yang","otherPref":["climate","education","cost_of_living","cuisine","pollution","female-male-ratio","health-care"],"skill":["Scala","Java"]}
+User:
+    {"preferences":["crime","traffic"],"name":"Reggie Yang","otherPref":["climate","education","cost_of_living","cuisine","pollution","female-male-ratio","health-care"],"skill":["Scala","Java"]}
