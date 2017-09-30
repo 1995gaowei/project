@@ -29,3 +29,10 @@ User:
 第一个界面就用这个：
 
 具体字段：用户姓名，技能，主要看重点，次要看重点。展示：用户姓名：xxx，技能：xxx，主要看重点：分行展示，次要看重点：剩下几个，分行展示
+
+
+City:
+
+    {"name":"Dallas","state":"TX","cuisine":4.19,"healthCare":66.13,"pollution":44.8,"climate":82.78,"costOfLiving":67.44,"crime":44.76,"traffic":182.29,"femaleRatio":52.0,"education":55.0}
+    
+每个城市的名字，所在州。后面的字段就是各种指标，全都用于绘图。图上是对比型的柱状图。
