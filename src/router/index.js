@@ -4,6 +4,8 @@ import Hello from '@/components/Hello'
 import User from '@/components/User'
 import Jobs from '@/components/Jobs'
 
+import Map from '@/components/Map'
+
 Vue.use(Router)
 
 export default new Router({
@@ -11,17 +13,17 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: User
+      component: Map
     },
-    {
-      path: '/User',
-      name: 'User',
-      component: User
-    },
-    {
-      path: '/Jobs',
-      name: 'Jobs',
-      component: Jobs
-    }
+    // {
+    //   path: '/User',
+    //   name: 'User',
+    //   component: User
+    // },
+    // {
+    //   path: '/Jobs',
+    //   name: 'Jobs',
+    //   component: Jobs
+    // }
   ]
 })

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-nav></header-nav>
+    <!-- <header-nav></header-nav> -->
     <div class="main-view">
       <router-view></router-view>
     </div>
@@ -23,7 +23,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 80px;
+  /* margin-top: 80px; */
 }
 
 .main-view {
