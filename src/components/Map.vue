@@ -16,7 +16,7 @@
     data: function () {
       return {
         searchKeys: ['python', 'java', 'scala', 'lol', 'James', 'Kobe', 'Patriots', 'Rodgers', 'Allen', 'job'],
-        activeKey: 'scala',
+        activeKey: 'java',
         map: {}
       }
     },
@@ -35,7 +35,7 @@
       },
       updateMap() {
         this.map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 2.5,
+          zoom: 1,
           center: new google.maps.LatLng(2.8, -187.3),
           mapTypeId: 'terrain'
         });
