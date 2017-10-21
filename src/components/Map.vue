@@ -45,7 +45,7 @@
             console.log(res);
             var infowindow = new google.maps.InfoWindow();
             res.forEach(val => {
-              var latLng = new google.maps.LatLng(val.lan, val.long);
+              var latLng = new google.maps.LatLng(val.lat, val.long);
               var marker = new google.maps.Marker({
                 position: latLng,
                 map: this.map
