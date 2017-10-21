@@ -132,7 +132,7 @@
               var latLng = new google.maps.LatLng(val.lat, val.long);
 
               var bluePoint = {
-                url: 'https://c1.staticflickr.com/5/4509/37805505292_0df6f6ab56_o.png',
+                url: 'https://c1.staticflickr.com/5/4493/37583223730_7c9ac52943_o.png',
                 size: new google.maps.Size(20,20),
               };
 
