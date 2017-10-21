@@ -15,44 +15,65 @@ export default {
     name: 'map',
     data: function() {	
         return {
-            searchKeys: [ 'key1', 'key2', 'key3' ],
-            activeKey: 'key1',
+            searchKeys: [ 'scala' ],
+            activeKey: 'scala',
+            map: {}
         }
     },
     methods: {
         search() {
             console.log(this.activeKey);
-            document.body.getElementsByTagName('script')[2].remove();
-            document.body.getElementsByTagName('script')[1].remove();
+            // document.body.getElementsByTagName('script')[2].remove();
+            // document.body.getElementsByTagName('script')[1].remove();
 
-            this.loadScript("http://localhost:3000/static/map.js")
-            this.loadScript("http://localhost:3000/static/map.js")
+            // this.loadScript("http://localhost:3000/static/map.js")
+            // this.loadScript("http://localhost:3000/static/map.js")
+            this.updateMap();
         },
-        loadScript(url, callback) {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        // if (typeof(callback) != "undefined") {
-        //   if (script.readyState) {
-        //     script.onreadystatechange = function () {
-        //       if (script.readyState == "loaded" || script.readyState == "complete") {
-        //         script.onreadystatechange = null;
-        //         callback();
-        //       }
-        //     };
-        //   } else {
-        //     script.onload = function () {
-        //       callback();
-        //     };
-        //   }
-        // }
-        script.src = url;
-        document.body.appendChild(script);
-      }
+        updateMap() {
+            this.map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 2.5,
+                center: new google.maps.LatLng(2.8,-187.3),
+                mapTypeId: 'terrain'
+            });
+            $.get('http://flask3-dev.us-east-1.elasticbeanstalk.com/search/'+this.activeKey)
+                .done(res => {
+                    console.log(res);
+                    res.forEach(val => {
+                        var latLng = new google.maps.LatLng(val.lan,val.long);
+                        var marker = new google.maps.Marker({
+                            position: latLng,
+                            map: this.map
+                        });
+                    })
+                })
+        }
+        // loadScript(url, callback) {
+        // var script = document.createElement("script");
+        // script.type = "text/javascript";
+        // // if (typeof(callback) != "undefined") {
+        // //   if (script.readyState) {
+        // //     script.onreadystatechange = function () {
+        // //       if (script.readyState == "loaded" || script.readyState == "complete") {
+        // //         script.onreadystatechange = null;
+        // //         callback();
+        // //       }
+        // //     };
+        // //   } else {
+        // //     script.onload = function () {
+        // //       callback();
+        // //     };
+        // //   }
+        // // }
+        // script.src = url;
+        // document.body.appendChild(script);
+    //   }
     },
     mounted() {
-
-      this.loadScript("http://localhost:3000/static/map.js");
-      this.loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDK5vnss5QrWksNKv0PIzsaaRa_8skvj8s&callback=initMap&language=en");
+        
+        this.updateMap();
+    //   this.loadScript("http://localhost:3000/static/map.js");
+    //   this.loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDK5vnss5QrWksNKv0PIzsaaRa_8skvj8s&callback=initMap&language=en");
     }
 }
 </script>
