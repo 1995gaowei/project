@@ -35,7 +35,7 @@
       },
       updateMap() {
         this.map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 1,
+          zoom: 2,
           center: new google.maps.LatLng(2.8, -187.3),
           mapTypeId: 'terrain'
         });
@@ -43,11 +43,25 @@
         $.get('http://flask3-dev.us-east-1.elasticbeanstalk.com/search/' + this.activeKey)
           .done(res => {
             console.log(res);
-            var infowindow = new google.maps.InfoWindow();
+            var infowindow = new google.maps.InfoWindow({
+              maxWidth: 250
+            });
             res.forEach(val => {
               var latLng = new google.maps.LatLng(val.lat, val.long);
+
+              var bluePoint = {
+                url: 'https://c1.staticflickr.com/5/4509/37805505292_0df6f6ab56_o.png',
+                size: new google.maps.Size(5, 5),
+              };
+
               var marker = new google.maps.Marker({
                 position: latLng,
+                icon: bluePoint,
+// {
+//                  path: google.maps.SymbolPath.CIRCLE,
+//                  fillColor: 'yellow',
+//                  scale: 1
+//                },
                 map: this.map
               });
               marker.addListener('click', function () {
